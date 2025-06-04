@@ -15,7 +15,7 @@
 
 void assignment12(void);
 void SeeSeat(char seat[]);
-void SeatReservation(char seat[]);
+int  SeatReservation(char seat[], int numOfSeat, int reservedList[]);
 
 
 int main(void)
