@@ -28,6 +28,7 @@ int main(void)
 void assignment12(void)
 {
 	char seat[SEATNUM] = { 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O' };
+	int reserved[SEATNUM] = { 0 };
 
 	while (1)
 	{
@@ -43,8 +44,24 @@ void assignment12(void)
 		{
 			break;
 		}
+		int numOfSeat = 0;
 
-		SeatReservation(seat);
+		SeeSeat(seat);
+
+		printf("예매할 좌석수? ");
+		scanf("%d", &numOfSeat);
+
+
+		int n = SeatReservation(seat, numOfSeat, reserved);
+		if (n > 0) {
+			for (int i = 0; i < n; i++)
+			{
+				printf("%d ", reserved[i]);
+			}
+			printf("좌석이 예약되었습니다!\n");
+		}
+
+		// SeatReservation(seat, numOfSeat);
 	}
 }
 
@@ -58,26 +75,47 @@ void SeeSeat(char seat[])
 	printf("]\n");
 }
 
-void SeatReservation(char seat[])
+/*
+int  SeatReservation(char seat[], int numOfSeat)
 {
-	int numofseat = 0, temp = 0;
+	int temp = 0;
+	int count = 0;
 
-	SeeSeat(seat);
-	printf("예매할 좌석수? ");
-	scanf("%d", &numofseat);
-
-	for (int i = 0; i < SEATNUM && temp < numofseat; i++)
+	for (int i = 0; i < SEATNUM && temp < numOfSeat; i++)
 	{
 		if (seat[i] == 'O')
 		{
 			seat[i] = 'X';
 
 			printf("%d ", i + 1);
-
+			count++;
 			temp++;
 		}
 	}
 
 	printf("번 좌석을 예매했습니다.\n");
+
+	return count;
 }
+*/
+
+// 입력: 모든 좌석정보, 예약할 좌석수
+// 반환값: 예약된 좌석수 + 예약된 좌석번호 목록
+int  SeatReservation(char seat[], int numOfSeat, int reservedList[])
+{
+	int count = 0;
+
+	for (int i = 0; i < SEATNUM && count < numOfSeat; i++)
+	{
+		if (seat[i] == 'O')
+		{
+			seat[i] = 'X';
+
+			reservedList[count++] = i + 1;
+		}
+	}
+
+	return count;
+}
+
 
