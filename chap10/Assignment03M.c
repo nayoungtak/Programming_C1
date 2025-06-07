@@ -3,7 +3,7 @@
  내용 :
  작성자 : 나영탁
  날짜 : 2025.06.05
- 버전 : v1.0
+ 버전 : v5.0
 */
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -22,10 +22,12 @@ int main(void)
 
 int assignment03(void)
 {
-	Login logins[] = {
-		{"guest", "idontknow"},
-		{"mirjam4", "147852km**"},
-		{"youngtak", "na"}
+	Login logins[NUM] = {
+	{"guest", "idontknow"},
+	{"mirjam4", "147852km**"},
+	{"youngtak", "na"},
+	{"id1", "pw1"},
+	{"id2", "pw2"}
 	};
 	Login SLogin = {"0", "0"};
 
