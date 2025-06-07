@@ -1,8 +1,8 @@
 
 // #pragma once
 
-#ifndef _CONTACT_H_123456789
-#define _CONTACT_H_123456789
+#ifndef _ASSIGNMENT03L_H_123456789
+#define _ASSIGNMENT03L_H_123456789
 
 
 struct login
@@ -12,5 +12,8 @@ struct login
 };
 typedef struct login Login;
 
+int comparison_login(Login log, Login SLogin);
+void print_login(Login logins[], Login SLogin);
 
-#endif //_CONTACT_H_123456789
+
+#endif //_ASSIGNMENT03L_H_123456789

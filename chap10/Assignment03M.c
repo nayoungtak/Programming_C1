@@ -8,6 +8,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include "Assignment03L.h"
 
 int assignment03(void);
 
@@ -21,6 +22,19 @@ int main(void)
 
 int assignment03(void)
 {
+	Login logins[] = {
+		{"guest", "idontknow"},
+		{"mirjam4", "147852km**"},
+		{"youngtak", "na"}
+	};
+	Login SLogin = {"0", "0"};
+
+	printf("ID? ");
+	scanf("%s", SLogin.id);
+	printf("Password? ");
+	scanf("%s", SLogin.password);
+
+	print_login(logins, SLogin);
 
 	return 0;
 }
