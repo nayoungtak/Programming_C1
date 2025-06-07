@@ -12,6 +12,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include "Assignment08P.h"
 
 int assignment08(void);
 
@@ -25,6 +26,16 @@ int main(void)
 
 int assignment08(void)
 {
+	Product p1 = {"0", 0, 0};
+	
+	printf("제품명? ");
+	scanf("%s", p1.name);
+	printf("가격? ");
+	scanf("%d", &p1.price);
+	printf("재고? ");
+	scanf("%d", &p1.stock);
+
+	print_product(p1);
 
 	return 0;
 }

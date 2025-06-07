@@ -5,14 +5,15 @@
 #define _PRODUCT_H_123456789
 
 
-struct login
+struct product
 {
-	char id[21];
-	char password[21];
+	char name[21];
+	int price;
+	int stock;
 };
-typedef struct login Login;
+typedef struct product Product;
 
-void print_login(Login l1);
-
+void print_product(Product p);
+	
 
 #endif //_PRODUCT_H_123456789
